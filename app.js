@@ -68,19 +68,31 @@ const userInput = () => {
       https://img.shields.io/badge/license-${license}-blue.svg
       # ${title}
       ## Table of Contents: 
-      <a href='${description}'>Description</a>
+      
       ## Description: 
+     
       ${description}
-      ## Installation: 
+      
+      ## Installation:
+   
       ${instruction}
+    
       ## Usage Information: 
+   
       ${usageInformation}
+    
       ## Contribution GuideLines: 
+ 
       ${contributionGuidelines}
+ 
       ## Test Intructions: 
+
       ${testInstruction}
+
       ## Question:
+ 
       ${github}
+  
       ### Please contact me thorugh my email ${email} for more information
       `, (err) => {
         if (err) { console.log(err) }

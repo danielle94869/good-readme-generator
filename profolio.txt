@@ -1,1 +1,0 @@
-Your name is 1 and your location is 2 and your bio is 3 and your linkedIn URL is 4 and your github URL is undefined
