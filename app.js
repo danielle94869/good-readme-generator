@@ -6,59 +6,82 @@ const userInput = () => {
     .prompt([
       {
         type: 'input',
-        name: 'name',
-        message: 'What is your name?'
+        name: 'title',
+        message: 'Title Project: '
       },
       {
         type: 'input',
-        name: 'location',
-        message: 'What is your location?'
+        name: 'description',
+        message: 'Description: '
       },
       {
         type: 'input',
-        name: 'bio',
-        message: 'What is your biography?'
+        name: 'instruction',
+        message: 'Installation instruction: '
       },
       {
         type: 'input',
-        name: 'LinkedInURL',
-        message: 'What is your LinkedIn URL?'
+        name: 'usageInformation',
+        message: 'Usage information '
       },
       {
         type: 'input',
-        name: 'GithubURL',
-        message: 'What is your Github URL?'
+        name: 'contributionGuidelines',
+        message: 'Contribution Guidelines: '
+      },
+      {
+        type: 'input',
+        name: 'testInstruction',
+        message: 'Test Instruction: '
+      },
+      {
+        type: 'input',
+        name: 'license',
+        message: 'License: '
+      },
+      {
+        type: 'input',
+        name: 'github',
+        message: 'Github Username:'
+      },
+      {
+        type: 'input',
+        name: 'email',
+        message: 'Email Address:'
       }
+
     ])
     .then(res => {
       console.log(res)
-      const name = res.name
-      const location = res.location
-      const bio = res.bio
-      const linkedIn = res.LinkedInURL
-      const github = res.githubURL
+      const title = res.title
+      const description = res.description
+      const instruction = res.instruction
+      const usageInformation = res.usageInformation
+      const contributionGuidelines = res.contributionGuidelines
+      const testInstruction = res.testInstruction
+      const license = res.license
+      const github = res.github
+      const email = res.email
       fs.appendFile('newReadMe.md', `
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>HTML Profolio</title>
-      <script src='./reset.css'></script>
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-      </head>
-      <body>
-      --------
-      <div class="jumbotron">
-      <h1> Your name is ${name}</h1>
-      <h1> Your location is ${location}</h1>
-      <h1> Your bio is ${bio} </h1>
-      <a href="${linkedIn}">LinkedIn</a>
-      <a href="${github}">Github</a>s
-      </div>
-      </body>
-      </html>
+      ## License:
+      ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"]
+      https://img.shields.io/badge/license-${license}-blue.svg
+      # ${title}
+      ## Table of Contents: 
+      <a href='${description}'>Description</a>
+      ## Description: 
+      ${description}
+      ## Installation: 
+      ${instruction}
+      ## Usage Information: 
+      ${usageInformation}
+      ## Contribution GuideLines: 
+      ${contributionGuidelines}
+      ## Test Intructions: 
+      ${testInstruction}
+      ## Question:
+      ${github}
+      ### Please contact me thorugh my email ${email} for more information
       `, (err) => {
         if (err) { console.log(err) }
         console.log('HTML Portfolio Created!')
